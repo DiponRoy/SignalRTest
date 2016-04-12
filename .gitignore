@@ -1,0 +1,5 @@
+/SDT/*.suo
+/SDT/packages
+/SDT/SDT/bin
+/SDT/SDT/obj
+/SDT/SDT/*.user

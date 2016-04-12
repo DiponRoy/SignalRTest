@@ -1,0 +1,171 @@
+﻿@{
+    ViewBag.Title = "Dev Test";
+}
+
+<div id="divSectionCreate" class="container" style="display: none" data-bind="with: createVm">
+    <h1 class="page-header">Create</h1>
+    <a class="btn btn-primary" data-bind="click: $root.createDone"> Done</a>
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <form id="frmCreateStudent" class="form-horizontal" role="#" data-bind="with: model">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Campaingn Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: campaingnName" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Date</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: date" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Clicks </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: clicks" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Conversions </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: conversions" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Impressions </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: impressions" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Affiliate Name </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: affiliateName" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-10 btn-toolbar">
+                        <a class="btn btn-success" href="#" data-bind="click: $parent.create">
+                            Create
+                        </a>
+                        <a class="btn btn-info" href="#" data-bind="click: $parent.reset">
+                            Reset
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+</div>
+<div id="divSectionUpdate" class="container" style="display: none" data-bind="with: updateVm">
+    <h1 class="page-header">Update</h1>
+    <a class="btn btn-primary" data-bind="click: $root.updateDone"> Done</a>
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+            <form id="frmCreateStudent" class="form-horizontal" role="#" data-bind="with: model">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Campaingn Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: campaingnName" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Date</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: date" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Clicks </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: clicks" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Conversions </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: conversions" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Impressions </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: impressions" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Affiliate Name </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" data-bind="value: affiliateName" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2"></label>
+                    <div class="col-sm-10 btn-toolbar">
+                        <a class="btn btn-success" href="#" data-bind="click: $parent.update">
+                            Update
+                        </a>
+                        <a class="btn btn-info" href="#" data-bind="click: $parent.reset">
+                            Reset
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+
+</div>
+<div id="divSectionList" class="container" data-bind="with: listVm">
+    <h1 class="page-header">List</h1>
+    <a class="btn btn-primary" data-bind="click: $root.showToCreate"> Create</a>
+    <div id="divStudentList" class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Campaingn Name</th>
+                    <th>Date</th>
+                    <th>Clicks</th>
+                    <th>Conversions</th>
+                    <th>Impressions</th>
+                    <th>Affiliate Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: models">
+                <tr>
+                    <td data-bind="text: $index() + 1"></td>
+                    <td data-bind="text: campaingnName"></td>
+                    <td data-bind="text: date"></td>
+                    <td data-bind="text: clicks"></td>
+                    <td data-bind="text: conversions"></td>
+                    <td data-bind="text: impressions"></td>
+                    <td data-bind="text: affiliateName"></td>
+                    <td>
+                        <a data-bind="click: $root.showToUpdate">Update</a>
+                        <a data-bind="click: $parent.confirmToRemove">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        (function() {
+            require(["ko", "vm.devtest"], function(ko, vm) {
+                ko.applyBindingsWithValidation(vm);
+                vm.listVm.load();
+            });
+        })();
+    </script>
+}
