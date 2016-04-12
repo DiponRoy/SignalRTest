@@ -17,6 +17,7 @@ namespace SDT
 
             bundles.Add(new ScriptBundle("~/bundles/js/core").Include(
                 "~/Scripts/jquery-{version}.js",
+                "~/Scripts/jquery.signalR-{version}.js",
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/bootbox.js",
                 "~/Scripts/toastr.js",

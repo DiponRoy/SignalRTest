@@ -162,9 +162,10 @@
 @section scripts{
     <script>
         (function() {
-            require(["ko", "vm.devtest"], function(ko, vm) {
+            require(["ko", "vm.devtest", "hubService"], function(ko, vm, hub) {
                 ko.applyBindingsWithValidation(vm);
                 vm.listVm.load();
+                hub.connect();
             });
         })();
     </script>

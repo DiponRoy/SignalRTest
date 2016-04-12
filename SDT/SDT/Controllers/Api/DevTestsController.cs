@@ -4,7 +4,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Microsoft.AspNet.SignalR;
 using SDT.Db.Models;
+using SDT.Hubs;
 using SDT.Uow;
 
 namespace SDT.Controllers.Api
@@ -13,6 +15,11 @@ namespace SDT.Controllers.Api
     {
         public DevTestsController(ISdtUow uow) : base(uow)
         {
+        }
+
+        private IHubContext Hub()
+        {
+            return Hub<DevTestsHub>();
         }
 
         // GET api/devtests
@@ -32,6 +39,8 @@ namespace SDT.Controllers.Api
         {
             Uow.Db.DevTests.Add(entity);
             Uow.Db.SaveChanges();
+
+            Hub().Clients.All.Create(entity);
         }
 
         // PUT api/devtests/5
@@ -45,6 +54,9 @@ namespace SDT.Controllers.Api
             devtest.Impressions = entity.Impressions;
             devtest.AffiliateName = entity.AffiliateName;
             Uow.Db.SaveChanges();
+
+            Hub().Clients.All.Update(devtest);
+
         }
 
         // DELETE api/devtests/5
@@ -53,6 +65,8 @@ namespace SDT.Controllers.Api
             var entity = Uow.Db.DevTests.First(x => x.Id == id);
             Uow.Db.DevTests.Remove(entity);
             Uow.Db.SaveChanges();
+
+            Hub().Clients.All.Remove(entity);
         }
     }
 }

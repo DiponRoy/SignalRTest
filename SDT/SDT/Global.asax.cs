@@ -18,7 +18,6 @@ namespace SDT
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
             IocConfig.Register(GlobalConfiguration.Configuration);
             ResponseSerializerConfig.Register(GlobalConfiguration.Configuration);
             WebApiConfig.Register(GlobalConfiguration.Configuration);
