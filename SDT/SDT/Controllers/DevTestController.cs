@@ -14,24 +14,9 @@ namespace SDT.Controllers
 
         public ActionResult Index()
         {
-            var db = new SdtDbCreateIfNotExistsContext();
+            var db = new SdtDbDropCreateDatabaseIfModelChanges();
             db.LoadDb();
             return View();
         }
-
-        public ActionResult List()
-        {
-            return View();
-        }
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        public ActionResult Update(int id)
-        {
-            return View();
-        }
-
     }
 }

@@ -31,7 +31,7 @@
                         notify.success('Dev test removed.');
                     },
                     error: function () {
-                        notify.error();
+                        notify.error("error to remove dev test.");
                     }
                 }, ko.mapping.toJS(item));
             },

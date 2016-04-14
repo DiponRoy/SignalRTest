@@ -22,13 +22,18 @@
                         reset();
                     },
                     error: function (data) {
-                        notify.error('Error.');
+                        notify.error('Error to create dev test.');
                     }
                 }, model);
             },
 
             reset = function () {
-                //model.reset();
+                model.campaingnName("");
+                model.date("");
+                model.clicks("");
+                model.conversions("");
+                model.impressions("");
+                model.affiliateName("");
                 errors.showAllMessages(false);
                 dirtyFlag().reset();
             };

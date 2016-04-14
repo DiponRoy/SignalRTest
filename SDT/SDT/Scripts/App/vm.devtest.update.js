@@ -24,7 +24,7 @@ function (ko, notify, devtest, service) {
             }, ko.mapping.toJS(model));
         },
         reset = function() {
-
+            load(model.id());
         };
 
     return {        

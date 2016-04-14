@@ -163,8 +163,7 @@
     <Compile Include="Controllers\Api\DevTestsController.cs" />
     <Compile Include="Controllers\Api\SdtApiController.cs" />
     <Compile Include="Controllers\DevTestController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Db\SdtDbCreateIfNotExistsContext.cs" />
+    <Compile Include="Db\SdtDbDropCreateDatabaseIfModelChanges.cs" />
     <Compile Include="Db\SdtDbMapContext.cs" />
     <Compile Include="Db\Configurations\DebTestConfig.cs" />
     <Compile Include="Db\ISdtDbContext.cs" />
@@ -294,13 +293,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\underscore.min.map" />
     <Content Include="Scripts\knockout.validation.min.js.map" />
-    <Content Include="Views\DevTest\List.cshtml" />
-    <Content Include="Views\DevTest\Create.cshtml" />
-    <Content Include="Views\DevTest\Update.cshtml" />
     <Content Include="Views\DevTest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
